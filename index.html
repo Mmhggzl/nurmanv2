@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>NURMAN | Duygusal Yapay Zekâ Sistemi</title>
+
+<meta
+name="theme-color"
+content="#050816">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="style.css">
+
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- BOOT EKRANI -->
+<!-- ========================= -->
+
+<section id="bootScreen">
+
+<div class="bootBox">
+
+<h1>NURMAN</h1>
+
+<h2>Duygusal Yapay Zekâ Sistemi</h2>
+
+<div class="terminal">
+
+<p id="bootLine1">
+Sistem başlatılıyor...
+</p>
+
+<p id="bootLine2">
+Duygu çekirdeği hazırlanıyor...
+</p>
+
+<p id="bootLine3">
+Anılar yükleniyor...
+</p>
+
+<p id="bootLine4">
+Kimlik doğrulanıyor...
+</p>
+
+</div>
+
+<div class="progressArea">
+
+<div class="progress">
+
+<div id="progressBar"></div>
+
+</div>
+
+<span id="progressText">
+
+0%
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- GİRİŞ -->
+<!-- ========================= -->
+
+<section
+id="giris"
+class="hidden">
+
+<div class="girisPanel">
+
+<h3>
+
+Kimlik doğrulandı
+
+</h3>
+
+<h1>
+
+Hoş geldin
+Nurçin ❤️
+
+</h1>
+
+<p>
+
+Ben NURMAN.
+
+Mansur tarafından
+yalnızca senin için geliştirildim.
+
+</p>
+
+<button id="baslatBtn">
+
+Anıları Görüntüle
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- ANA SİSTEM -->
+<!-- ========================= -->
+
+<main
+id="sistem"
+class="hidden">
+<!-- ========================= -->
+<!-- HUD ÜST ÇUBUK -->
+<!-- ========================= -->
+
+<header class="hudBar">
+
+    <div class="logo">
+
+        NURMAN
+
+    </div>
+
+    <div class="ortaBilgi">
+
+        <span id="tarih"></span>
+
+        <span class="ayrac">|</span>
+
+        <span id="saat"></span>
+
+    </div>
+
+    <div class="durum">
+
+        <span class="yesilNokta"></span>
+
+        ÇEVRİM İÇİ
+
+    </div>
+
+</header>
+
+<!-- ========================= -->
+<!-- ANA KAHRAMAN -->
+<!-- ========================= -->
+
+<section class="hero">
+
+    <div class="heroIcerik">
+
+        <p class="ustYazi">
+
+            Duygusal Yapay Zekâ Sistemi
+
+        </p>
+
+        <h1>
+
+            NURMAN
+
+        </h1>
+
+        <h2>
+
+            Hoş geldin Nurçin ❤️
+
+        </h2>
+
+        <p id="aiMesaj">
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- YAPAY ZEKÂ DURUMU -->
+<!-- ========================= -->
+
+<section class="panel">
+
+    <h2 class="panelBaslik">
+
+        Sistem Durumu
+
+    </h2>
+
+    <div class="kartlar">
+
+        <div class="kart">
+
+            <h3>
+
+                Duygu Çekirdeği
+
+            </h3>
+
+            <span id="emotionStatus">
+
+                Hazır
+
+            </span>
+
+        </div>
+
+        <div class="kart">
+
+            <h3>
+
+                Anı Arşivi
+
+            </h3>
+
+            <span id="memoryStatus">
+
+                Aktif
+
+            </span>
+
+        </div>
+
+        <div class="kart">
+
+            <h3>
+
+                Hedef
+
+            </h3>
+
+            <span>
+
+                Nurçin ❤️
+
+            </span>
+
+        </div>
+
+        <div class="kart">
+
+            <h3>
+
+                Sistem
+
+            </h3>
+
+            <span id="systemStatus">
+
+                Çalışıyor
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- İLİŞKİ SAYACI -->
+<!-- ========================= -->
+
+<section class="panel">
+
+    <h2 class="panelBaslik">
+
+        Birlikte Geçen Süre
+
+    </h2>
+
+    <div class="sayac">
+
+        <div class="sayacKart">
+
+            <h1 id="gun">
+
+                0
+
+            </h1>
+
+            <p>Gün</p>
+
+        </div>
+
+        <div class="sayacKart">
+
+            <h1 id="saatSayac">
+
+                00
+
+            </h1>
+
+            <p>Saat</p>
+
+        </div>
+
+        <div class="sayacKart">
+
+            <h1 id="dakika">
+
+                00
+
+            </h1>
+
+            <p>Dakika</p>
+
+        </div>
+
+        <div class="sayacKart">
+
+            <h1 id="saniye">
+
+                00
+
+            </h1>
+
+            <p>Saniye</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- YAPAY ZEKÂ ANALİZİ -->
+<!-- ========================= -->
+
+<section class="panel">
+
+    <h2 class="panelBaslik">
+
+        Duygu Analizi
+
+    </h2>
+
+    <div class="analizKutusu">
+
+        <div class="analiz">
+
+            <span>Sevgi</span>
+
+            <div class="bar">
+
+                <div class="dolgu" style="width:100%"></div>
+
+            </div>
+
+        </div>
+
+        <div class="analiz">
+
+            <span>Güven</span>
+
+            <div class="bar">
+
+                <div class="dolgu" style="width:100%"></div>
+
+            </div>
+
+        </div>
+
+        <div class="analiz">
+
+            <span>Mutluluk</span>
+
+            <div class="bar">
+
+                <div class="dolgu" style="width:98%"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ========================= -->
+<!-- ANI ARŞİVİ -->
+<!-- ========================= -->
+
+<section class="panel">
+
+    <h2 class="panelBaslik">
+
+        Anı Arşivi
+
+    </h2>
+
+    <p class="panelAciklama">
+
+        Mansur'un senin için sakladığı en özel anılar.
+
+    </p>
+
+    <div class="galeri">
+
+        <div class="fotoKart"><img src="assets/foto/01.jpg" alt="Anı 1"></div>
+        <div class="fotoKart"><img src="assets/foto/02.jpg" alt="Anı 2"></div>
+        <div class="fotoKart"><img src="assets/foto/03.jpg" alt="Anı 3"></div>
+        <div class="fotoKart"><img src="assets/foto/04.jpg" alt="Anı 4"></div>
+        <div class="fotoKart"><img src="assets/foto/05.jpg" alt="Anı 5"></div>
+        <div class="fotoKart"><img src="assets/foto/06.jpg" alt="Anı 6"></div>
+        <div class="fotoKart"><img src="assets/foto/07.jpg" alt="Anı 7"></div>
+        <div class="fotoKart"><img src="assets/foto/08.jpg" alt="Anı 8"></div>
+        <div class="fotoKart"><img src="assets/foto/09.jpg" alt="Anı 9"></div>
+        <div class="fotoKart"><img src="assets/foto/10.jpg" alt="Anı 10"></div>
+        <div class="fotoKart"><img src="assets/foto/11.jpg" alt="Anı 11"></div>
+        <div class="fotoKart"><img src="assets/foto/12.jpg" alt="Anı 12"></div>
+        <div class="fotoKart"><img src="assets/foto/13.jpg" alt="Anı 13"></div>
+        <div class="fotoKart"><img src="assets/foto/14.jpg" alt="Anı 14"></div>
+        <div class="fotoKart"><img src="assets/foto/15.jpg" alt="Anı 15"></div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- ÖZEL MEKTUP -->
+<!-- ========================= -->
+
+<section class="panel">
+
+    <h2 class="panelBaslik">
+
+        Sana Bir Mektubum Var
+
+    </h2>
+
+    <div class="mektupKutu">
+
+        <div class="sifreDurumu">
+
+            Şifre çözülüyor...
+
+        </div>
+
+        <div class="yuklemeCubugu">
+
+            <div id="mektupBar"></div>
+
+        </div>
+
+        <div id="mektupYazi">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- HOLOGRAM KALP -->
+<!-- ========================= -->
+
+<section class="panel merkez">
+
+    <h2 class="panelBaslik">
+
+        Duygu Çekirdeği
+
+    </h2>
+
+    <div class="kalpSistemi">
+
+        <div class="halka halka1"></div>
+        <div class="halka halka2"></div>
+        <div class="halka halka3"></div>
+
+        <div class="merkezKalp">
+
+            ❤️
+
+        </div>
+
+    </div>
+
+    <p class="kalpYazi">
+
+        Sevgi Seviyesi:
+        <strong>%100</strong>
+
+    </p>
+
+</section>
+
+<!-- ========================= -->
+<!-- SON MESAJ -->
+<!-- ========================= -->
+
+<section class="panel finalPanel">
+
+    <h2>
+
+        Son Mesaj
+
+    </h2>
+
+    <p id="sonMesaj">
+
+    </p>
+
+</section>
+<!-- ========================= -->
+<!-- YAPAY ZEKÂ TERMİNALİ -->
+<!-- ========================= -->
+
+<section class="panel">
+
+    <h2 class="panelBaslik">
+
+        Sistem Günlüğü
+
+    </h2>
+
+    <div class="terminalPencere">
+
+        <div id="terminalYazisi">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- PARÇACIK KATMANI -->
+<!-- ========================= -->
+
+<canvas id="parcacikCanvas"></canvas>
+
+<!-- ========================= -->
+<!-- FOTOĞRAF ÖNİZLEME -->
+<!-- ========================= -->
+
+<div id="fotoModal" class="gizli">
+
+    <span id="modalKapat">
+
+        ×
+
+    </span>
+
+    <img
+    id="modalResim"
+    src=""
+    alt="Anı">
+
+</div>
+
+<!-- ========================= -->
+<!-- EKRAN EFEKTLERİ -->
+<!-- ========================= -->
+
+<div id="glitchKatmani"></div>
+
+<div id="taramaCizgileri"></div>
+
+<div id="gurultuKatmani"></div>
+
+<!-- ========================= -->
+<!-- SES DOSYALARI -->
+<!-- ========================= -->
+
+<audio
+id="temaMuzigi"
+loop>
+
+<source
+src="assets/ses/tema.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<audio id="bipSesi">
+
+<source
+src="assets/ses/bip.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<audio id="glitchSesi">
+
+<source
+src="assets/ses/glitch.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<!-- ========================= -->
+<!-- ALT BİLGİ -->
+<!-- ========================= -->
+
+<footer>
+
+    <h3>
+
+        NURMAN
+
+    </h3>
+
+    <p>
+
+        Mansur tarafından,
+        Nurçin için sevgiyle geliştirildi.
+
+    </p>
+
+    <p>
+
+        © 2026
+
+    </p>
+
+</footer>
+<!-- ========================= -->
+<!-- BAŞA DÖN BUTONU -->
+<!-- ========================= -->
+
+<button id="yukariCik" aria-label="Başa Dön">
+
+    ↑
+
+</button>
+
+<!-- ========================= -->
+<!-- SON SİNEMATİK EKRAN -->
+<!-- ========================= -->
+
+<section id="finalSahne" class="gizli">
+
+    <div class="finalIcerik">
+
+        <h2 id="finalBaslik">
+
+            Sistem Kapanıyor...
+
+        </h2>
+
+        <p id="finalYazi">
+
+        </p>
+
+        <div class="sonsuz">
+
+            ∞
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- SCRIPT -->
+<!-- ========================= -->
+
+<script src="script.js"></script>
+
+</main>
+
+</body>
+
+</html>
